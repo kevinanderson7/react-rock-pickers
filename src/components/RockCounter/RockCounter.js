@@ -10,10 +10,16 @@ class RockCounter extends Component {
   }
   clickIncrease = () => {
     console.log('clicked increase');
-    this.setState({
-      rocksPicked: this.state.rocksPicked + 1,
-    });
-    console.log(this.state.rocksPicked);
+    if (this.state.rocksPicked < 50) {
+      this.setState({
+        rocksPicked: this.state.rocksPicked + 1,
+      });
+      console.log(this.state.rocksPicked);
+    } else {
+      this.setState({
+        rocksPicked: `${this.state.rocksPicked} DONE`,
+      });
+    }
   };
 
   clickDecrease = () => {
