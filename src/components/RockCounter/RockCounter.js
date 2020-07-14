@@ -24,6 +24,14 @@ class RockCounter extends Component {
     console.log(this.state.rocksPicked);
   };
 
+  clickReset = () => {
+    console.log('clicked reset');
+    this.setState({
+      rocksPicked: 0,
+    });
+    console.log(this.state.rocksPicked);
+  };
+
   render() {
     return (
       <div>
@@ -31,7 +39,7 @@ class RockCounter extends Component {
         <div>
           <button onClick={this.clickIncrease}>Increase</button>
           <button onClick={this.clickDecrease}>Decrease</button>
-          <button>Reset</button>
+          <button onClick={this.clickReset}>Reset</button>
         </div>
       </div>
     );
