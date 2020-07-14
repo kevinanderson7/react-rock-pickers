@@ -18,10 +18,16 @@ class RockCounter extends Component {
 
   clickDecrease = () => {
     console.log('clicked decrease');
-    this.setState({
-      rocksPicked: this.state.rocksPicked - 1,
-    });
-    console.log(this.state.rocksPicked);
+    if (this.state.rocksPicked > 0) {
+      this.setState({
+        rocksPicked: this.state.rocksPicked - 1,
+      });
+      console.log(this.state.rocksPicked);
+    } else {
+      this.setState({
+        rocksPicked: 0,
+      });
+    }
   };
 
   clickReset = () => {
